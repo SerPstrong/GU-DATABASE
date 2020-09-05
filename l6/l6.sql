@@ -4,10 +4,18 @@
 -- Работаем с БД vk и тестовыми данными, которые вы сгенерировали ранее:
 
 -- 1. Создать и заполнить таблицы лайков и постов.
-use vk;
-show tables;
-SELECT * from likes;
+DESC users;
+DESC profiles;
 
+SELECT * `
+
+ALTER TABLE profiles 
+    ADD CONSTRAINT profiles_user_id_fk
+        FOREIGN KEY (user_id) REFERENCES users(id)
+            ON DELETE CASCADE,
+    ADD CONSTRAINT profiles_photo_id_fk
+        FOREIGN KEY (photo_id) REFERENCES media(id)
+            ON DELETE CASCADE;
 
 -- 2. Создать все необходимые внешние ключи и диаграмму отношений.
 
