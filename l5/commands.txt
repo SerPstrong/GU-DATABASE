@@ -1,0 +1,7 @@
+--Обновление даты
+UPDATE users set created_at = CURRENT_TIMESTAMP(), updated_at = CURRENT_TIMESTAMP();
+
+--Изменение типа дынных
+ALTER TABLE users MODIFY created_at datetime;
+ALTER TABLE users MODIFY updated_at datetime;
+
